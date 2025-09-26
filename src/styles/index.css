@@ -1,0 +1,46 @@
+@import 'tailwindcss';
+
+@layer components {
+	.button {
+		color: #606c80;
+		background-color: #ffffff;
+		font-weight: 500;
+		border-radius: 8px;
+		font-size: 16px;
+		line-height: 32px;
+		padding-left: 32px;
+		padding-right: 32px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		cursor: pointer;
+		text-align: center;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid #dee1e6;
+	}
+
+	.button:disabled {
+		cursor: not-allowed;
+		color: #a5b6d6;
+		border: 1px solid #e6eaf1;
+	}
+	.button:hover {
+		color: #a5b6d6;
+		border: 1px solid #e6eaf1;
+	}
+	.input {
+		padding: 10px;
+		color: #333;
+		background-color: #ffffff;
+		border-radius: 8px;
+		font-size: 16px;
+		font-size: 18px;
+		font-weight: 400;
+		outline: none;
+		border: 1px solid #dee1e6;
+	}
+	.input::placeholder {
+		color: #777;
+	}
+}
