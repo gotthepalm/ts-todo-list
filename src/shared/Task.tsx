@@ -24,15 +24,26 @@ export default function Task({ title, subTasks, taskIndex }: Props) {
 
 	return (
 		<li className='bg-white flex flex-row p-5 rounded-2xl'>
-			<div className='flex flex-col items-start p-5 w-full'>
-				<h2 className='text-2xl font-medium mb-4'>{title}</h2>
-				<ul className='pl-10 list-disc mb-5 flex flex-col gap-2.5'>
+			<div className='flex flex-col items-start w-full'>
+				<h2 className='text-[30px] font-medium mb-4'>{title}</h2>
+				<ul className='list-none mb-5 flex flex-col gap-2.5 w-full'>
 					{subTasks.map((value, index) => (
-						<li key={index}>{value}</li>
+						<div key={index} className='flex items-center'>
+							<span className='block h-[2px] w-14 bg-gray-200 mr-7.5'></span>
+
+							<li className='text-[16px] font-medium text-gray-800'>
+								{value}
+							</li>
+						</div>
 					))}
 				</ul>
 			</div>
-			<Button type='button' onClick={() => deleteTask()} className='self-end grow-[1]'>
+			<Button
+				type='button'
+				onClick={() => deleteTask()}
+				className='self-end grow-[1]'
+				stylishment='delete'
+			>
 				Delete
 			</Button>
 		</li>

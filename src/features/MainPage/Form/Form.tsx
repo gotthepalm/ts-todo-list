@@ -5,6 +5,7 @@ import Input from '../../../shared/Input';
 
 export default function Form() {
 	const context = useContext(TaskContext);
+	const huy = 'huy';
 
 	if (!context) {
 		return;
@@ -52,6 +53,9 @@ export default function Form() {
 			return true;
 		}
 	}
+
+	console.log(huy);
+
 	return (
 		<form action='submit' onSubmit={(e) => handleSubmit(e)} className='mb-8'>
 			<div className='bg-white flex flex-col items-center p-5 rounded-2xl mb-4 relative w-full'>
@@ -74,7 +78,10 @@ export default function Form() {
 				</div>
 				<ul className='w-full flex flex-col gap-2.5 has-[li]:pt-2.5 pl-10'>
 					{subValues.map((_, index) => (
-						<li className='w-full flex justify-between rounded-[5px] border-[1px] border-[#dee1e6]' key={index}>
+						<li
+							className='w-full flex justify-between rounded-[8px] border-[1px] border-[#dee1e6]'
+							key={index}
+						>
 							<Input
 								placeholder='Type a subtask name...'
 								type='text'
@@ -85,7 +92,8 @@ export default function Form() {
 							<Button
 								type='button'
 								onClick={() => deleteSubValue(index)}
-								className='max-w-[15%] w-full border-0 border-l-[1px] rounded-l-none'
+								className='max-w-[15%] w-full '
+								stylishment='delete'
 							>
 								X
 							</Button>
@@ -101,7 +109,13 @@ export default function Form() {
 				>
 					Create Task
 				</Button>
-				<Button disabled={handleError()} onClick={() => cancelTask()} type='button' className='w-[25%] grow-[1] bg-white'>
+				<Button
+					disabled={handleError()}
+					onClick={() => cancelTask()}
+					type='button'
+					className='w-[25%] grow-[1] bg-white'
+					stylishment='delete'
+				>
 					Cancel
 				</Button>
 			</div>

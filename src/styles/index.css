@@ -26,8 +26,9 @@
 		border: 1px solid #e6eaf1;
 	}
 	.button:hover {
-		color: #a5b6d6;
-		border: 1px solid #e6eaf1;
+		color: var(--color-blue-300);
+		background: var(--color-blue-100);
+		border: 1px solid var(--color-blue-200);
 	}
 	.input {
 		padding: 10px;
