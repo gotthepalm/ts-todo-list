@@ -5,15 +5,14 @@ import Input from '../../../shared/Input';
 
 export default function Form() {
 	const context = useContext(TaskContext);
-	const huy = 'huy';
+	const [value, setValue] = useState('');
+	const [subValues, setSubValues] = useState<string[]>([]);
 
 	if (!context) {
 		return;
 	}
 
 	const { setTaskArray } = context;
-	const [value, setValue] = useState('');
-	const [subValues, setSubValues] = useState<string[]>([]);
 
 	function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
 		event.preventDefault();
@@ -53,8 +52,6 @@ export default function Form() {
 			return true;
 		}
 	}
-
-	console.log(huy);
 
 	return (
 		<form action='submit' onSubmit={(e) => handleSubmit(e)} className='mb-8'>
